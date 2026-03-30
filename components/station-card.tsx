@@ -29,7 +29,7 @@ export default function StationCard({
 }: StationCardProps) {
   return (
     <div
-      className={`relative overflow-hidden rounded-xl border card-hover group ${
+      className={`relative overflow-hidden rounded-xl border card-hover group flex flex-col ${
         featured ? "border-cyan/40" : "border-border"
       } bg-bg-card`}
     >
@@ -58,7 +58,7 @@ export default function StationCard({
       {/* Top visual area (non-overlapping) */}
       {topVisual && <div className="relative z-10">{topVisual}</div>}
 
-      <div className="relative z-10 p-6 md:p-8 flex flex-col h-full min-h-[340px]">
+      <div className="relative z-10 p-6 md:p-8 flex flex-col flex-1 min-h-[340px]">
         {/* Tags */}
         <div className="flex items-center gap-2 mb-4">
           {featured && (
