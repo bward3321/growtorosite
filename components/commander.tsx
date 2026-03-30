@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const tools = ["Claude Code", "Instantly", "Apollo", "n8n", "Perplexity", "ChatGPT", "Suno", "LinkedIn"];
+const tools = ["Claude Code", "Instantly", "Apollo", "n8n", "Perplexity", "ChatGPT", "Suno", "LinkedIn", "Leonardo AI", "Make.com", "Vercel"];
 
 export default function Commander() {
   return (
