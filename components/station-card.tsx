@@ -12,6 +12,7 @@ interface StationCardProps {
   cta: { text: string; href: string; primary?: boolean };
   featured?: boolean;
   children?: React.ReactNode;
+  topVisual?: React.ReactNode;
 }
 
 export default function StationCard({
@@ -24,6 +25,7 @@ export default function StationCard({
   cta,
   featured,
   children,
+  topVisual,
 }: StationCardProps) {
   return (
     <div
@@ -38,13 +40,13 @@ export default function StationCard({
             src={image}
             alt=""
             fill
-            className="object-cover opacity-50 group-hover:opacity-60 transition-opacity"
-            style={{ filter: "brightness(1.1) saturate(1.2)" }}
+            className="object-cover opacity-55 group-hover:opacity-65 transition-opacity"
+            style={{ filter: "brightness(1.3) saturate(1.2)" }}
           />
           <div
             className="absolute inset-0"
             style={{
-              background: "linear-gradient(to top, rgba(6,10,16,0.6) 0%, rgba(6,10,16,0) 100%)",
+              background: "linear-gradient(to top, rgba(6,10,16,0.45) 0%, rgba(6,10,16,0) 100%)",
             }}
           />
         </div>
@@ -52,6 +54,9 @@ export default function StationCard({
 
       {/* Custom visual overlay (children) */}
       {children && <div className="absolute inset-0">{children}</div>}
+
+      {/* Top visual area (non-overlapping) */}
+      {topVisual && <div className="relative z-10">{topVisual}</div>}
 
       <div className="relative z-10 p-6 md:p-8 flex flex-col h-full min-h-[340px]">
         {/* Tags */}
@@ -70,7 +75,7 @@ export default function StationCard({
           <h3 className="text-2xl font-extrabold text-text mt-1">{name}</h3>
         </div>
 
-        <p className="text-text-dim text-sm leading-relaxed mb-6 max-w-md">{description}</p>
+        <p className="text-sm leading-relaxed mb-6 max-w-md" style={{ color: "#d1d9e3" }}>{description}</p>
 
         {/* Stats */}
         <div className="flex flex-wrap gap-3 mb-6">

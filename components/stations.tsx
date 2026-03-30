@@ -15,12 +15,12 @@ const platforms = [
 
 function PlatformPills() {
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div className="flex flex-wrap gap-2 justify-center max-w-xs opacity-60">
+    <div className="relative w-full pt-6 px-6 pb-4 pointer-events-none">
+      <div className="grid grid-cols-2 gap-2">
         {platforms.map((p, i) => (
           <span
             key={p}
-            className="px-3 py-1 rounded-full text-xs font-mono text-cyan border border-cyan/20 bg-cyan-glow"
+            className="px-3 py-1.5 rounded-full text-xs font-mono text-cyan border border-cyan/20 bg-cyan-glow text-center"
             style={{
               animation: `pill-glow 3s ease infinite ${i * 0.3}s`,
             }}
@@ -107,9 +107,8 @@ export default function Stations() {
               { value: "Verified", label: "email data" },
             ]}
             cta={{ text: "Open Lead Scraper →", href: "https://leads.growtoro.com", primary: true }}
-          >
-            <PlatformPills />
-          </StationCard>
+            topVisual={<PlatformPills />}
+          />
 
           {/* Station 03 — Cold Email */}
           <StationCard

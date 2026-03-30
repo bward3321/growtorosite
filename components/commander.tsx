@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const tools = ["Claude Code", "Instantly", "Apollo", "n8n", "Perplexity", "ChatGPT"];
+const tools = ["Claude Code", "Instantly", "Apollo", "n8n", "Perplexity", "ChatGPT", "Suno", "LinkedIn"];
 
 export default function Commander() {
   return (
@@ -41,7 +41,7 @@ export default function Commander() {
                 {tools.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 rounded-lg border border-border-light bg-[rgba(0,212,255,0.04)] text-text-dim text-xs font-mono"
+                    className="btn-gradient-border px-3 py-1 rounded-lg bg-[rgba(0,212,255,0.04)] text-text-dim text-xs font-mono"
                   >
                     {t}
                   </span>

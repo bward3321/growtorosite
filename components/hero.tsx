@@ -4,15 +4,20 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 export default function Hero() {
-  const [utcTime, setUtcTime] = useState("");
+  const [estTime, setEstTime] = useState("");
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tick = () => {
       const now = new Date();
-      setUtcTime(
-        now.toISOString().slice(11, 19) + " UTC"
-      );
+      const est = now.toLocaleTimeString("en-US", {
+        timeZone: "America/New_York",
+        hour12: false,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+      });
+      setEstTime(est + " EST");
     };
     tick();
     const interval = setInterval(tick, 1000);
@@ -89,7 +94,7 @@ export default function Hero() {
 
       <div className="absolute top-24 right-6 md:right-10 font-mono text-[14px] md:text-[18px] leading-relaxed text-right pointer-events-none select-none">
         <div className="text-green">UPTIME: 99.97%</div>
-        <div className="text-text-dim">{utcTime}</div>
+        <div className="text-text-dim">{estTime}</div>
       </div>
 
       <div className="absolute bottom-10 left-6 md:left-10 font-mono text-[14px] md:text-[18px] text-text-muted pointer-events-none select-none">
