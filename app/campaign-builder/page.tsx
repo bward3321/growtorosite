@@ -278,13 +278,13 @@ export default function CampaignBuilder() {
 
         {/* Footer links */}
         <div className="space-y-2 pt-6 border-t border-[#1a1a1a]">
-          <a href="/#missions" className="block text-[#555] text-xs hover:text-[#888] transition-colors">
+          <a href="https://growtoro.com/#missions" className="block text-[#555] text-xs hover:text-[#888] transition-colors">
             Case Studies
           </a>
-          <a href="/#stations" className="block text-[#555] text-xs hover:text-[#888] transition-colors">
+          <a href="https://growtoro.com/#stations" className="block text-[#555] text-xs hover:text-[#888] transition-colors">
             Pricing
           </a>
-          <a href="/" className="block text-[#555] text-xs hover:text-[#888] transition-colors">
+          <a href="https://growtoro.com" className="block text-[#555] text-xs hover:text-[#888] transition-colors">
             About Growtoro
           </a>
         </div>
