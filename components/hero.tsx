@@ -108,8 +108,15 @@ export default function Hero() {
       {/* Center content */}
       <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border-light bg-[rgba(0,212,255,0.06)] mb-8">
-          <span className="text-cyan text-sm font-medium">AI-Powered Lead Generation</span>
+        <div
+          className="btn-gradient-border inline-flex items-center gap-2 rounded-full mb-8"
+          style={{
+            padding: "10px 24px",
+            background: "linear-gradient(135deg, rgba(0,212,255,0.2), rgba(124,58,237,0.2))",
+            boxShadow: "0 0 20px rgba(0,212,255,0.3)",
+          }}
+        >
+          <span className="text-white text-[15px] font-bold">AI-Powered Lead Generation</span>
         </div>
 
         {/* Headline */}
