@@ -21,7 +21,7 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="w-full px-10 flex items-center justify-between h-16">
         {/* Left side: Logo + Status badge */}
         <div className="flex items-center gap-4">
           <a href="#">
