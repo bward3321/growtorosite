@@ -34,8 +34,19 @@ export default function StationCard({
       {/* Background image */}
       {image && (
         <div className="absolute inset-0">
-          <Image src={image} alt="" fill className="object-cover opacity-20 group-hover:opacity-25 transition-opacity" />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/90 to-bg-card/60" />
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover opacity-50 group-hover:opacity-60 transition-opacity"
+            style={{ filter: "brightness(1.1) saturate(1.2)" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "linear-gradient(to top, rgba(6,10,16,0.6) 0%, rgba(6,10,16,0) 100%)",
+            }}
+          />
         </div>
       )}
 

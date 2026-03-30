@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,19 +22,29 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        {/* Logo */}
-        <a href="#" className="text-xl font-extrabold text-text tracking-tight">
-          Grow<span className="text-cyan">toro</span>
-        </a>
+        {/* Left side: Logo + Status badge */}
+        <div className="flex items-center gap-4">
+          <a href="#">
+            <Image
+              src="/images/LOGOOLD.png"
+              alt="Growtoro"
+              width={140}
+              height={36}
+              className="h-auto"
+              style={{ width: 140 }}
+              priority
+            />
+          </a>
 
-        {/* Status badge */}
-        <div className="hidden md:flex items-center gap-2 ml-4 px-3 py-1 rounded-full border border-green/20 bg-green-glow">
-          <span className="w-2 h-2 rounded-full bg-green animate-pulse" style={{ animation: "pulse-dot 2s infinite" }} />
-          <span className="text-green text-xs font-mono font-medium">ALL SYSTEMS ONLINE</span>
+          {/* Status badge */}
+          <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border border-green/20 bg-green-glow">
+            <span className="w-2 h-2 rounded-full bg-green animate-pulse" style={{ animation: "pulse-dot 2s infinite" }} />
+            <span className="text-green text-xs font-mono font-medium">ALL SYSTEMS ONLINE</span>
+          </div>
         </div>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-6 ml-auto">
+        {/* Right side: Desktop links + CTA */}
+        <div className="hidden md:flex items-center gap-6">
           <a href="#stations" className="text-[15px] text-text-dim hover:text-text transition-colors">
             Stations
           </a>
@@ -51,7 +62,8 @@ export default function Nav() {
           <a
             href="/campaign-builder"
             target="_blank"
-            className="btn-gradient px-3 py-1.5 rounded-lg text-[16px] inline-flex items-center gap-1"
+            className="btn-gradient rounded-lg text-[16px] inline-flex items-center gap-1 font-semibold"
+            style={{ padding: "12px 28px" }}
           >
             Build a Campaign <span aria-hidden="true">→</span>
           </a>

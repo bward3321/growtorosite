@@ -20,7 +20,7 @@ export default function Commander() {
             {/* Photo */}
             <div className="shrink-0">
               <Image
-                src="/images/brendan.jpg"
+                src="/images/Me7.png"
                 alt="Brendan Ward"
                 width={120}
                 height={120}
