@@ -51,6 +51,9 @@ export default function Nav() {
           <a href="#missions" className="text-[15px] text-text-dim hover:text-text transition-colors">
             Case Studies
           </a>
+          <a href="/grow-your-newsletter" className="text-[15px] text-text-dim hover:text-text transition-colors">
+            Newsletter Growth
+          </a>
           <a
             href="https://leads.growtoro.com"
             target="_blank"
@@ -93,6 +96,9 @@ export default function Nav() {
           </a>
           <a href="#missions" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
             Case Studies
+          </a>
+          <a href="/grow-your-newsletter" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
+            Newsletter Growth
           </a>
           <a href="https://leads.growtoro.com" target="_blank" rel="noopener noreferrer" className="text-text-dim hover:text-text py-2">
             Lead Scraper
