@@ -11,6 +11,7 @@ const CATEGORIES = [
   "AI & Automation",
   "Lead Generation",
   "Outbound Strategy",
+  "Case Study",
 ];
 
 function formatDate(dateStr: string) {
