@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,6 +52,9 @@ export default function Nav() {
           <a href="#missions" className="text-[15px] text-text-dim hover:text-text transition-colors">
             Case Studies
           </a>
+          <Link href="/blog" className="text-[15px] text-text-dim hover:text-text transition-colors">
+            Blog
+          </Link>
           <a href="/grow-your-newsletter" className="text-[15px] text-text-dim hover:text-text transition-colors">
             Newsletter Growth
           </a>
@@ -97,6 +101,9 @@ export default function Nav() {
           <a href="#missions" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
             Case Studies
           </a>
+          <Link href="/blog" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
+            Blog
+          </Link>
           <a href="/grow-your-newsletter" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
             Newsletter Growth
           </a>

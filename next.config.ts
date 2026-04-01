@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
       { source: "/customers", destination: "/#missions", permanent: true },
       { source: "/case-study-abm-international", destination: "/#missions", permanent: true },
       { source: "/privacy", destination: "/", permanent: true },
-      { source: "/blog", destination: "/", permanent: true },
       { source: "/home-v2", destination: "/", permanent: true },
     ];
   },

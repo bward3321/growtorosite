@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t border-border py-8 px-6">
@@ -6,6 +8,9 @@ export default function Footer() {
           © 2026 Growtoro. All systems operational.
         </span>
         <div className="flex items-center gap-6">
+          <Link href="/blog" className="text-text-muted text-sm hover:text-text-dim transition-colors">
+            Blog
+          </Link>
           <a href="#" className="text-text-muted text-sm hover:text-text-dim transition-colors">
             Privacy
           </a>
