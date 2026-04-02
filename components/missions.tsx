@@ -2,9 +2,11 @@
 
 const missions = [
   {
-    client: "Necchi Sewing",
-    result: "+150 Dealership Partnerships",
-    category: "Cold Email — Retail Expansion",
+    client: "Evium",
+    result: "+$10M",
+    resultLabel: "In Sales Generated",
+    category: "Cold Email — Market Penetration",
+    objective: "Drive massive marketing penetration and sales growth through targeted cold email outreach campaigns.",
   },
   {
     client: "Sunday Citizen",
@@ -59,7 +61,13 @@ export default function Missions() {
                 <span className="text-xs font-mono text-text-muted">{m.category}</span>
               </div>
               <h3 className="text-xl font-extrabold text-text mb-2">{m.client}</h3>
+              {m.objective && (
+                <p className="text-text-muted text-sm mb-3">{m.objective}</p>
+              )}
               <p className="text-cyan font-mono text-sm font-medium">{m.result}</p>
+              {m.resultLabel && (
+                <p className="text-text-muted font-mono text-xs mt-1">{m.resultLabel}</p>
+              )}
             </div>
           ))}
         </div>
