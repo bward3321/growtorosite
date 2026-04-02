@@ -82,7 +82,7 @@ export default function Stations() {
             label="Interactive Product"
             name="AI Campaign Builder"
             description="Talk to our AI. It builds your entire cold email campaign in 90 seconds — ICP targeting, market sizing, custom copy, full email sequences. Then launch it."
-            image="/images/cold-email.jpg"
+            image="/images/mission-control.jpg"
             featured
             stats={[
               { value: "90s", label: "build time" },
