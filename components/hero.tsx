@@ -80,8 +80,8 @@ export default function Hero() {
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-bg to-transparent pointer-events-none" />
 
-      {/* Ambient readouts */}
-      <div className="absolute top-24 left-6 md:left-10 font-mono text-[14px] md:text-[18px] leading-relaxed pointer-events-none select-none">
+      {/* Ambient readouts — desktop only */}
+      <div className="hidden md:block absolute top-24 left-10 font-mono text-[18px] leading-relaxed pointer-events-none select-none">
         <div>
           <span className="text-cyan-dim">SYS</span>{" "}
           <span className="text-green">ACTIVE_CAMPAIGNS: 257</span>
@@ -92,21 +92,21 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute top-24 right-6 md:right-10 font-mono text-[14px] md:text-[18px] leading-relaxed text-right pointer-events-none select-none">
+      <div className="hidden md:block absolute top-24 right-10 font-mono text-[18px] leading-relaxed text-right pointer-events-none select-none">
         <div className="text-green">UPTIME: 99.97%</div>
         <div className="text-text-dim">{estTime}</div>
       </div>
 
-      <div className="absolute bottom-10 left-6 md:left-10 font-mono text-[14px] md:text-[18px] text-text-muted pointer-events-none select-none">
+      <div className="hidden md:block absolute bottom-10 left-10 font-mono text-[18px] text-text-muted pointer-events-none select-none">
         LOC 41.0934°N, 73.9190°W
       </div>
 
-      <div className="absolute bottom-10 right-6 md:right-10 font-mono text-[14px] md:text-[18px] text-text-muted pointer-events-none select-none animate-pulse">
+      <div className="hidden md:block absolute bottom-10 right-10 font-mono text-[18px] text-text-muted pointer-events-none select-none animate-pulse">
         SCROLL TO ENTER ↓
       </div>
 
       {/* Center content */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
+      <div className="relative z-10 text-center max-w-3xl mx-auto px-5 md:px-6 pt-[120px] md:pt-0">
         {/* Badge */}
         <div
           className="btn-gradient-border inline-flex items-center gap-2 rounded-full mb-8"
@@ -120,7 +120,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+        <h1 className="text-[32px] md:text-7xl font-extrabold leading-tight mb-6">
           Your Pipeline.
           <br />
           <span
@@ -145,13 +145,13 @@ export default function Hero() {
           <a
             href="/campaign-builder"
             target="_blank"
-            className="btn-gradient px-8 py-3.5 rounded-xl text-lg font-semibold"
+            className="btn-gradient px-8 py-3.5 rounded-xl text-lg font-semibold w-full sm:w-auto text-center"
           >
             Build a Campaign
           </a>
           <a
             href="#stations"
-            className="btn-gradient-border px-8 py-3.5 rounded-xl text-lg font-semibold"
+            className="btn-gradient-border px-8 py-3.5 rounded-xl text-lg font-semibold w-full sm:w-auto text-center"
           >
             Explore Stations ↓
           </a>

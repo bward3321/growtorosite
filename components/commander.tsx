@@ -16,7 +16,7 @@ export default function Commander() {
         </h2>
 
         <div className="bg-bg-card border border-border rounded-xl p-8 md:p-10 card-hover">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
             {/* Photo */}
             <div className="shrink-0">
               <Image
@@ -37,7 +37,7 @@ export default function Commander() {
               </p>
 
               {/* Tool badges */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {tools.map((t) => (
                   <span
                     key={t}

@@ -22,7 +22,7 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full px-10 flex items-center justify-between h-16">
+      <div className="w-full px-5 md:px-10 flex items-center justify-between h-16">
         {/* Left side: Logo + Status badge */}
         <div className="flex items-center gap-4">
           <a href="#">
@@ -92,25 +92,25 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — full-screen overlay */}
       {mobileOpen && (
-        <div className="md:hidden bg-[rgba(6,10,16,0.95)] backdrop-blur-xl border-b border-border px-6 pb-4 flex flex-col gap-3">
-          <a href="#stations" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
+        <div className="md:hidden fixed inset-0 top-16 bg-[rgba(6,10,16,0.98)] backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 px-6">
+          <a href="#stations" className="text-text text-xl font-semibold py-2" onClick={() => setMobileOpen(false)}>
             Stations
           </a>
-          <a href="#missions" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
+          <a href="#missions" className="text-text text-xl font-semibold py-2" onClick={() => setMobileOpen(false)}>
             Case Studies
           </a>
-          <Link href="/blog" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
+          <Link href="/blog" className="text-text text-xl font-semibold py-2" onClick={() => setMobileOpen(false)}>
             Blog
           </Link>
-          <a href="/grow-your-newsletter" className="text-text-dim hover:text-text py-2" onClick={() => setMobileOpen(false)}>
+          <a href="/grow-your-newsletter" className="text-text text-xl font-semibold py-2" onClick={() => setMobileOpen(false)}>
             Newsletter Growth
           </a>
-          <a href="https://leads.growtoro.com" target="_blank" rel="noopener noreferrer" className="text-text-dim hover:text-text py-2">
+          <a href="https://leads.growtoro.com" target="_blank" rel="noopener noreferrer" className="text-text text-xl font-semibold py-2">
             Lead Scraper
           </a>
-          <a href="/campaign-builder" target="_blank" className="btn-gradient px-4 py-2 rounded-lg text-center text-sm">
+          <a href="/campaign-builder" target="_blank" className="btn-gradient px-8 py-3 rounded-xl text-center text-lg font-semibold mt-4">
             Build a Campaign →
           </a>
         </div>

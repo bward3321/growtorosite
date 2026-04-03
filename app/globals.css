@@ -44,6 +44,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Scanline overlay */
@@ -211,9 +212,24 @@ body::after {
   overflow: hidden;
 }
 
-/* Smooth scroll */
+/* Prevent horizontal overflow */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Mobile section padding & title sizes */
+@media (max-width: 767px) {
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  section h2 {
+    font-size: 28px !important;
+  }
 }
 
 /* Selection color */

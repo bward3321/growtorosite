@@ -47,7 +47,7 @@ function StatCounter({ label, value, increment, intervalMs, live }: CounterProps
           </span>
         )}
       </div>
-      <div className="text-[38px] font-mono font-extrabold text-text leading-none">
+      <div className="text-[28px] md:text-[38px] font-mono font-extrabold text-text leading-none">
         {count.toLocaleString()}
       </div>
     </div>
@@ -78,7 +78,7 @@ export default function Dashboard() {
         <div className="bg-bg-card border border-border rounded-xl p-8 md:p-10 card-hover">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <div className="text-[52px] font-mono font-extrabold text-cyan leading-none mb-2">
+              <div className="text-[36px] md:text-[52px] font-mono font-extrabold text-cyan leading-none mb-2">
                 $250M+
               </div>
               <div className="text-text-dim text-lg">Total Client Revenue Generated</div>
