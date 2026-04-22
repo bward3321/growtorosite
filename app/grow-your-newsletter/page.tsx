@@ -196,6 +196,62 @@ export default function GrowYourNewsletter() {
         </div>
       </section>
 
+      {/* CLIENT RESULTS */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-4">
+            <span className="text-cyan font-mono text-sm uppercase tracking-widest">— Client Results</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">
+            Hear It From Our Clients
+          </h2>
+          <p className="text-text-dim text-center text-lg mb-14 max-w-2xl mx-auto">
+            Real newsletter operators sharing their real results with Growtoro.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                src: "https://www.youtube.com/embed/dbmiPH1XK6U",
+                title: "Strategic Seeing Club",
+                subtitle: "Newsletter Growth Campaign Results",
+              },
+              {
+                src: "https://www.youtube.com/embed/L54KlU7d-hk",
+                title: "Stock Therapy with Penny Queen",
+                subtitle: "Newsletter Growth Campaign Results",
+              },
+            ].map((video) => (
+              <div
+                key={video.title}
+                className="card-hover rounded-2xl border border-border bg-bg-card p-5"
+              >
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{
+                    paddingBottom: "56.25%",
+                    borderRadius: 12,
+                    border: "1px solid var(--border)",
+                  }}
+                >
+                  <iframe
+                    src={video.src}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 0 }}
+                  />
+                </div>
+                <div className="mt-4">
+                  <h3 className="text-white font-bold text-[18px]">{video.title}</h3>
+                  <p className="text-text-dim text-[14px] mt-1">{video.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PERFORMANCE METRICS */}
       <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
