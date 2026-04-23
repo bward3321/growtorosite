@@ -141,7 +141,7 @@ export default function GrowYourNewsletter() {
       <Nav />
 
       {/* HERO */}
-      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pb-[60px]">
         {/* Grid overlay */}
         <div
           className="absolute inset-0 pointer-events-none"

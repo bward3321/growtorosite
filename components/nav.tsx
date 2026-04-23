@@ -46,23 +46,23 @@ export default function Nav() {
 
         {/* Right side: Desktop links + CTA */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#stations" className="text-[15px] text-text-dim hover:text-text transition-colors">
+          <a href="#stations" className="text-[15px] hover:text-text transition-colors" style={{ color: "#b0bec5" }}>
             Stations
           </a>
-          <a href="#missions" className="text-[15px] text-text-dim hover:text-text transition-colors">
+          <a href="#missions" className="text-[15px] hover:text-text transition-colors" style={{ color: "#b0bec5" }}>
             Case Studies
           </a>
-          <Link href="/blog" className="text-[15px] text-text-dim hover:text-text transition-colors">
+          <Link href="/blog" className="text-[15px] hover:text-text transition-colors" style={{ color: "#b0bec5" }}>
             Blog
           </Link>
-          <a href="/grow-your-newsletter" className="text-[15px] text-text-dim hover:text-text transition-colors">
+          <a href="/grow-your-newsletter" className="text-[15px] hover:text-text transition-colors" style={{ color: "#b0bec5" }}>
             Newsletter Growth
           </a>
           <a
             href="https://leads.growtoro.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[15px] text-text-dim hover:text-text transition-colors"
+            className="text-[15px] hover:text-text transition-colors" style={{ color: "#b0bec5" }}
           >
             Lead Scraper
           </a>
