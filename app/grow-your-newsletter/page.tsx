@@ -4,6 +4,8 @@ import { useState } from "react";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 
+const BODY_TEXT = "#d1d9e3";
+
 const faqs = [
   {
     q: "How does this compare to paid ads?",
@@ -43,6 +45,13 @@ const stats = [
   "95% Client Retention Rate",
   "$0.10–$0.15 Per Subscriber",
   "Month-to-Month, No Contracts",
+];
+
+const heroBullets = [
+  { plain: "", highlight: "2,000–2,500+ verified subscribers", tail: " delivered per month" },
+  { plain: "", highlight: "$0.10–$0.15 per subscriber", tail: " — 10x cheaper than paid ads" },
+  { plain: "Compliant infrastructure built ", highlight: "under your brand", tail: "" },
+  { plain: "Month-to-month, no contracts, ", highlight: "95% client retention", tail: "" },
 ];
 
 const howItWorks = [
@@ -89,6 +98,39 @@ const included = [
     desc: "Only engaged, interested prospects who didn't opt-out transition into your newsletter — pre-warmed and ready for your content.",
   },
 ];
+
+const videos = [
+  {
+    src: "https://www.youtube.com/embed/dbmiPH1XK6U",
+    title: "Strategic Seeing Club",
+    subtitle: "Newsletter Growth Campaign Results",
+  },
+  {
+    src: "https://www.youtube.com/embed/L54KlU7d-hk",
+    title: "Stock Therapy with Penny Queen",
+    subtitle: "Newsletter Growth Campaign Results",
+  },
+  {
+    src: "https://www.youtube.com/embed/LhysRVtb-Fk",
+    title: "Client Testimonial",
+    subtitle: "Newsletter Growth Campaign Results",
+  },
+];
+
+function StrategyCallCTA() {
+  return (
+    <div className="mt-10 text-center">
+      <a
+        href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn-gradient px-8 py-3.5 rounded-xl text-lg font-semibold inline-flex items-center gap-2"
+      >
+        Book a Strategy Call <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  );
+}
 
 export default function GrowYourNewsletter() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -152,12 +194,37 @@ export default function GrowYourNewsletter() {
             </span>
           </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-white leading-relaxed mb-10 max-w-3xl mx-auto">
-            We find your ideal subscribers, build compliant outreach infrastructure, and deliver
-            2,000–2,500+ verified subscribers per month at $0.10–$0.15 per subscriber. No ads. No
-            algorithms. Just predictable, affordable growth.
+          {/* Subtitle — intro line */}
+          <p
+            className="text-lg md:text-xl leading-relaxed mb-5 max-w-3xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
+            We find your ideal subscribers and fill your newsletter on autopilot:
           </p>
+
+          {/* Subtitle — bullets */}
+          <ul className="mb-10 max-w-2xl mx-auto flex flex-col gap-3 text-left sm:items-center">
+            {heroBullets.map((b, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 text-[16px] md:text-[17px] leading-relaxed"
+                style={{ color: "#ffffff" }}
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex-shrink-0 font-bold"
+                  style={{ color: "#00d4ff", lineHeight: "1.6" }}
+                >
+                  →
+                </span>
+                <span>
+                  {b.plain}
+                  <span style={{ color: "#00d4ff", fontWeight: 700 }}>{b.highlight}</span>
+                  {b.tail}
+                </span>
+              </li>
+            ))}
+          </ul>
 
           {/* CTA */}
           <a
@@ -172,7 +239,7 @@ export default function GrowYourNewsletter() {
       </section>
 
       {/* STATS BAR */}
-      <section className="py-12 px-6 border-y border-border">
+      <section className="py-10 px-6 border-y border-border">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
             <div key={stat} className="flex items-center gap-3">
@@ -197,30 +264,22 @@ export default function GrowYourNewsletter() {
       </section>
 
       {/* CLIENT RESULTS */}
-      <section className="py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-4">
+      <section className="py-[60px] px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-3">
             <span className="text-cyan font-mono text-sm uppercase tracking-widest">— Client Results</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3">
             Hear It From Our Clients
           </h2>
-          <p className="text-text-dim text-center text-lg mb-14 max-w-2xl mx-auto">
+          <p
+            className="text-center text-lg mb-8 max-w-2xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
             Real newsletter operators sharing their real results with Growtoro.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                src: "https://www.youtube.com/embed/dbmiPH1XK6U",
-                title: "Strategic Seeing Club",
-                subtitle: "Newsletter Growth Campaign Results",
-              },
-              {
-                src: "https://www.youtube.com/embed/L54KlU7d-hk",
-                title: "Stock Therapy with Penny Queen",
-                subtitle: "Newsletter Growth Campaign Results",
-              },
-            ].map((video) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {videos.map((video) => (
               <div
                 key={video.title}
                 className="card-hover rounded-2xl border border-border bg-bg-card p-5"
@@ -244,7 +303,9 @@ export default function GrowYourNewsletter() {
                 </div>
                 <div className="mt-4">
                   <h3 className="text-white font-bold text-[18px]">{video.title}</h3>
-                  <p className="text-text-dim text-[14px] mt-1">{video.subtitle}</p>
+                  <p className="text-[14px] mt-1" style={{ color: BODY_TEXT }}>
+                    {video.subtitle}
+                  </p>
                 </div>
               </div>
             ))}
@@ -253,12 +314,15 @@ export default function GrowYourNewsletter() {
       </section>
 
       {/* PERFORMANCE METRICS */}
-      <section className="py-24 px-6">
+      <section className="py-[60px] px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3">
             Performance Metrics
           </h2>
-          <p className="text-text-dim text-center text-lg mb-14 max-w-2xl mx-auto">
+          <p
+            className="text-center text-lg mb-8 max-w-2xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
             Real numbers from real newsletter growth campaigns.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -275,18 +339,24 @@ export default function GrowYourNewsletter() {
                 >
                   {m.value}
                 </div>
-                <div className="text-text-dim text-[15px] font-medium">{m.label}</div>
+                <div className="text-[15px] font-medium" style={{ color: BODY_TEXT }}>
+                  {m.label}
+                </div>
               </div>
             ))}
           </div>
+          <StrategyCallCTA />
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-24 px-6">
+      <section className="py-[60px] px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">How It Works</h2>
-          <p className="text-text-dim text-center text-lg mb-14 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3">How It Works</h2>
+          <p
+            className="text-center text-lg mb-8 max-w-2xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
             A simple, proven three-step system to grow your newsletter predictably.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -304,21 +374,30 @@ export default function GrowYourNewsletter() {
                 </span>
                 <div className="relative z-10">
                   <h3 className="text-[20px] font-bold text-text mb-3">{step.title}</h3>
-                  <p className="text-text-dim text-[15px] leading-relaxed">{step.desc}</p>
+                  <p
+                    className="text-[15px] leading-relaxed"
+                    style={{ color: BODY_TEXT }}
+                  >
+                    {step.desc}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
+          <StrategyCallCTA />
         </div>
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="py-24 px-6">
+      <section className="py-[60px] px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3">
             What&apos;s Included
           </h2>
-          <p className="text-text-dim text-center text-lg mb-14 max-w-2xl mx-auto">
+          <p
+            className="text-center text-lg mb-8 max-w-2xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
             Everything you need for predictable newsletter growth, fully managed.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -328,17 +407,23 @@ export default function GrowYourNewsletter() {
                 className="card-hover rounded-2xl border border-border bg-bg-card p-8"
               >
                 <h3 className="text-[20px] font-bold text-text mb-2">{item.title}</h3>
-                <p className="text-text-dim text-[16px] leading-relaxed">{item.desc}</p>
+                <p
+                  className="text-[16px] leading-relaxed"
+                  style={{ color: BODY_TEXT }}
+                >
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
+          <StrategyCallCTA />
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-6">
+      <section className="py-[60px] px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8">
             Frequently Asked Questions
           </h2>
           <div className="flex flex-col gap-3">
@@ -351,7 +436,12 @@ export default function GrowYourNewsletter() {
                   className="w-full flex items-center justify-between px-6 py-5 text-left"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
-                  <span className="text-[18px] font-semibold text-text pr-4">{faq.q}</span>
+                  <span
+                    className="text-[18px] font-semibold pr-4"
+                    style={{ color: "#e8ecf1" }}
+                  >
+                    {faq.q}
+                  </span>
                   <svg
                     width="20"
                     height="20"
@@ -363,7 +453,7 @@ export default function GrowYourNewsletter() {
                   >
                     <path
                       d="M5 7.5l5 5 5-5"
-                      stroke="#7a8a9e"
+                      stroke="#d1d9e3"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -372,22 +462,31 @@ export default function GrowYourNewsletter() {
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-5">
-                    <p className="text-text-dim text-[16px] leading-relaxed">{faq.a}</p>
+                    <p
+                      className="text-[16px] leading-relaxed"
+                      style={{ color: BODY_TEXT }}
+                    >
+                      {faq.a}
+                    </p>
                   </div>
                 )}
               </div>
             ))}
           </div>
+          <StrategyCallCTA />
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 px-6">
+      <section className="py-[60px] px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-[48px] font-extrabold text-text mb-4 leading-tight">
             Stop Waiting for Organic Growth.
           </h2>
-          <p className="text-text-dim text-lg mb-10 max-w-2xl mx-auto">
+          <p
+            className="text-lg mb-10 max-w-2xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
             Our done-for-you system finds your ideal subscribers, reaches them with personalized
             outreach, and delivers 2,000–2,500+ verified subscribers per month. Predictable.
             Affordable. Scalable.
