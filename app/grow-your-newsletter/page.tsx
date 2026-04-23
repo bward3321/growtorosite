@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
+import NewsletterPricingSlider from "@/components/newsletter-pricing-slider";
 
 const BODY_TEXT = "#d1d9e3";
 
@@ -312,6 +313,9 @@ export default function GrowYourNewsletter() {
           </div>
         </div>
       </section>
+
+      {/* PRICING SLIDER */}
+      <NewsletterPricingSlider />
 
       {/* PERFORMANCE METRICS */}
       <section className="py-[60px] px-6">

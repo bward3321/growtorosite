@@ -237,3 +237,80 @@ html {
   background: rgba(0, 212, 255, 0.3);
   color: var(--text);
 }
+
+/* Pricing slider */
+.pricing-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.1s linear;
+}
+
+.pricing-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15), 0 0 20px rgba(0, 212, 255, 0.6);
+  cursor: grab;
+  animation: slider-pulse 2s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+
+.pricing-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15), 0 0 20px rgba(0, 212, 255, 0.6);
+  cursor: grab;
+  animation: slider-pulse 2s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+
+.pricing-slider::-webkit-slider-thumb:hover,
+.pricing-slider::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+}
+.pricing-slider::-moz-range-thumb:hover,
+.pricing-slider::-moz-range-thumb:active {
+  transform: scale(1.1);
+}
+
+.pricing-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.25), 0 0 24px rgba(0, 212, 255, 0.8);
+}
+.pricing-slider:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 6px rgba(0, 212, 255, 0.25), 0 0 24px rgba(0, 212, 255, 0.8);
+}
+
+@keyframes slider-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.15), 0 0 20px rgba(0, 212, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(0, 212, 255, 0.1), 0 0 28px rgba(0, 212, 255, 0.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-slider {
+    height: 14px;
+  }
+  .pricing-slider::-webkit-slider-thumb {
+    width: 44px;
+    height: 44px;
+  }
+  .pricing-slider::-moz-range-thumb {
+    width: 44px;
+    height: 44px;
+  }
+}
