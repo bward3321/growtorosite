@@ -5,7 +5,7 @@ import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 import NewsletterPricingSlider from "@/components/newsletter-pricing-slider";
 
-const BODY_TEXT = "#d1d9e3";
+const BODY_TEXT = "#e8ecf1";
 
 const faqs = [
   {
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "What's the cost and guarantees?",
-    a: "Campaigns start at $600/month with a guaranteed minimum of 2,000–2,500+ verified subscribers delivered. That works out to $0.10–$0.15 per subscriber. Month-to-month, no long-term contracts. If we don't deliver, you don't pay for what wasn't delivered.",
+    a: "Campaigns start at $399/month with a guaranteed minimum of verified subscribers delivered. That works out to as low as $0.11 per subscriber (roughly $0.11–$0.27 per subscriber depending on your volume tier). Month-to-month, no long-term contracts. If we don't deliver, you don't pay for what wasn't delivered.",
   },
   {
     q: "Can I pause or cancel anytime?",
@@ -34,25 +34,35 @@ const faqs = [
   },
 ];
 
-const metrics = [
-  { value: "2,500+", label: "Verified Subs Delivered Per Month" },
+type Metric = {
+  value: string;
+  label: string;
+  labelHighlight?: string;
+};
+
+const metrics: Metric[] = [
+  {
+    value: "2,500+",
+    label: "Verified Subscribers Delivered Each Month, ",
+    labelHighlight: "Guaranteed",
+  },
   { value: "10K+", label: "Emails Sent Per Day" },
-  { value: "95%", label: "Client Retention Rate" },
-  { value: "$0.10", label: "Average Cost Per Subscriber" },
+  { value: "2 Weeks", label: "From Signup to Live Campaign" },
+  { value: "$0.11", label: "Lowest Cost Per Subscriber" },
 ];
 
 const stats = [
   "20+ Active Newsletter Clients",
-  "95% Client Retention Rate",
-  "$0.10–$0.15 Per Subscriber",
+  "Done-For-You Setup",
+  "As Low As $0.11 Per Subscriber",
   "Month-to-Month, No Contracts",
 ];
 
 const heroBullets = [
   { plain: "", highlight: "2,000–2,500+ verified subscribers", tail: " delivered per month" },
-  { plain: "", highlight: "$0.10–$0.15 per subscriber", tail: " — 10x cheaper than paid ads" },
+  { plain: "As low as ", highlight: "$0.11 per subscriber", tail: " — 10x cheaper than paid ads" },
   { plain: "Compliant infrastructure built ", highlight: "under your brand", tail: "" },
-  { plain: "Month-to-month, no contracts, ", highlight: "95% client retention", tail: "" },
+  { plain: "Month-to-month, no contracts, ", highlight: "done-for-you setup", tail: "" },
 ];
 
 const howItWorks = [
@@ -103,32 +113,41 @@ const included = [
 const videos = [
   {
     src: "https://www.youtube.com/embed/dbmiPH1XK6U",
-    title: "Strategic Seeing Club",
-    subtitle: "Newsletter Growth Campaign Results",
+    quote: "Growtoro completely transformed how we grow our audience",
+    name: "Strategic Seeing Club",
   },
   {
     src: "https://www.youtube.com/embed/L54KlU7d-hk",
-    title: "Stock Therapy with Penny Queen",
-    subtitle: "Newsletter Growth Campaign Results",
+    quote: "The ROI has been absolutely insane for us",
+    name: "Stock Therapy with Penny Queen",
   },
   {
     src: "https://www.youtube.com/embed/LhysRVtb-Fk",
-    title: "Client Testimonial",
-    subtitle: "Newsletter Growth Campaign Results",
+    quote: "I wish we started this six months earlier",
+    name: "Newsletter Client",
   },
 ];
 
-function StrategyCallCTA() {
+function PrimaryCTA() {
   return (
     <div className="mt-10 text-center">
       <a
-        href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#pricing-slider"
         className="btn-gradient px-8 py-3.5 rounded-xl text-lg font-semibold inline-flex items-center gap-2"
       >
-        Book a Strategy Call <span aria-hidden="true">→</span>
+        Start Growing Now <span aria-hidden="true">→</span>
       </a>
+      <div className="mt-4">
+        <a
+          href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[14px] underline decoration-dotted underline-offset-4"
+          style={{ color: "#c8d2dc" }}
+        >
+          Prefer to talk first? Book a strategy call
+        </a>
+      </div>
     </div>
   );
 }
@@ -229,13 +248,22 @@ export default function GrowYourNewsletter() {
 
           {/* CTA */}
           <a
-            href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing-slider"
             className="btn-gradient px-8 py-3.5 rounded-xl text-lg font-semibold inline-flex items-center gap-2"
           >
-            Book a Strategy Call <span aria-hidden="true">→</span>
+            Start Growing Now <span aria-hidden="true">→</span>
           </a>
+          <div className="mt-4">
+            <a
+              href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] underline decoration-dotted underline-offset-4"
+              style={{ color: "#c8d2dc" }}
+            >
+              Prefer to talk first? Book a strategy call
+            </a>
+          </div>
         </div>
       </section>
 
@@ -282,9 +310,29 @@ export default function GrowYourNewsletter() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {videos.map((video) => (
               <div
-                key={video.title}
-                className="card-hover rounded-2xl border border-border bg-bg-card p-5"
+                key={video.src}
+                className="card-hover rounded-2xl border border-border bg-bg-card p-6 flex flex-col"
               >
+                <div className="mb-5 flex items-start gap-2">
+                  <span
+                    aria-hidden="true"
+                    className="font-serif leading-none flex-shrink-0"
+                    style={{
+                      color: "#00d4ff",
+                      fontSize: 44,
+                      lineHeight: 0.8,
+                      marginTop: 4,
+                    }}
+                  >
+                    “
+                  </span>
+                  <h3
+                    className="text-white font-extrabold leading-snug"
+                    style={{ fontSize: "clamp(18px, 1.9vw, 22px)" }}
+                  >
+                    {video.quote}
+                  </h3>
+                </div>
                 <div
                   className="relative w-full overflow-hidden"
                   style={{
@@ -295,19 +343,19 @@ export default function GrowYourNewsletter() {
                 >
                   <iframe
                     src={video.src}
-                    title={video.title}
+                    title={video.quote}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     className="absolute inset-0 w-full h-full"
                     style={{ border: 0 }}
                   />
                 </div>
-                <div className="mt-4">
-                  <h3 className="text-white font-bold text-[18px]">{video.title}</h3>
-                  <p className="text-[14px] mt-1" style={{ color: BODY_TEXT }}>
-                    {video.subtitle}
-                  </p>
-                </div>
+                <p
+                  className="text-[13px] mt-4 uppercase tracking-widest font-mono"
+                  style={{ color: "#a8b2bc" }}
+                >
+                  — {video.name}
+                </p>
               </div>
             ))}
           </div>
@@ -316,6 +364,69 @@ export default function GrowYourNewsletter() {
 
       {/* PRICING SLIDER */}
       <NewsletterPricingSlider />
+
+      {/* WHAT TO EXPECT */}
+      <section className="py-[60px] px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-3">
+            <span className="text-cyan font-mono text-sm uppercase tracking-widest">
+              — Your First Month
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-3">
+            What To Expect When You Start
+          </h2>
+          <p
+            className="text-center text-lg mb-10 max-w-2xl mx-auto"
+            style={{ color: BODY_TEXT }}
+          >
+            A clear week-by-week roadmap — no guessing, no waiting in the dark.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: "🔍",
+                title: "Week 1: Strategy & Setup",
+                desc: "We research your ideal subscriber profile, set up dedicated sending infrastructure, and write your custom outreach sequences.",
+              },
+              {
+                icon: "🚀",
+                title: "Week 2: Campaign Launch",
+                desc: "Your first emails go out. We monitor deliverability, optimize subject lines, and start generating responses.",
+              },
+              {
+                icon: "📈",
+                title: "Week 3: Subscribers Flowing",
+                desc: "Engaged prospects begin transitioning into your newsletter. You'll see new subscribers appearing daily.",
+              },
+              {
+                icon: "⚡",
+                title: "Week 4: Optimize & Scale",
+                desc: "We analyze performance, refine targeting, and prepare to scale volume for month two and beyond.",
+              },
+            ].map((step) => (
+              <div
+                key={step.title}
+                className="card-hover rounded-2xl border border-border bg-bg-card p-6"
+              >
+                <div className="text-[36px] mb-3" aria-hidden="true">
+                  {step.icon}
+                </div>
+                <h3 className="text-[18px] font-bold text-white mb-2 leading-snug">
+                  {step.title}
+                </h3>
+                <p
+                  className="text-[15px] leading-relaxed"
+                  style={{ color: BODY_TEXT }}
+                >
+                  {step.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <PrimaryCTA />
+        </div>
+      </section>
 
       {/* PERFORMANCE METRICS */}
       <section className="py-[60px] px-6">
@@ -345,11 +456,19 @@ export default function GrowYourNewsletter() {
                 </div>
                 <div className="text-[15px] font-medium" style={{ color: BODY_TEXT }}>
                   {m.label}
+                  {m.labelHighlight && (
+                    <span
+                      className="font-extrabold"
+                      style={{ color: "#00d4ff" }}
+                    >
+                      {m.labelHighlight}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
           </div>
-          <StrategyCallCTA />
+          <PrimaryCTA />
         </div>
       </section>
 
@@ -388,7 +507,7 @@ export default function GrowYourNewsletter() {
               </div>
             ))}
           </div>
-          <StrategyCallCTA />
+          <PrimaryCTA />
         </div>
       </section>
 
@@ -420,7 +539,7 @@ export default function GrowYourNewsletter() {
               </div>
             ))}
           </div>
-          <StrategyCallCTA />
+          <PrimaryCTA />
         </div>
       </section>
 
@@ -477,7 +596,7 @@ export default function GrowYourNewsletter() {
               </div>
             ))}
           </div>
-          <StrategyCallCTA />
+          <PrimaryCTA />
         </div>
       </section>
 
@@ -496,13 +615,22 @@ export default function GrowYourNewsletter() {
             Affordable. Scalable.
           </p>
           <a
-            href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing-slider"
             className="btn-gradient px-[48px] py-[20px] rounded-xl text-[18px] font-semibold inline-flex items-center gap-2"
           >
-            Book a Strategy Call <span aria-hidden="true">→</span>
+            Start Growing Now <span aria-hidden="true">→</span>
           </a>
+          <div className="mt-5">
+            <a
+              href="https://calendly.com/growtoro/newsletter-growth-strategy-chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] underline decoration-dotted underline-offset-4"
+              style={{ color: "#c8d2dc" }}
+            >
+              Prefer to talk first? Book a strategy call
+            </a>
+          </div>
         </div>
       </section>
 

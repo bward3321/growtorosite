@@ -37,7 +37,7 @@ function formatNumber(n: number): string {
 }
 
 export default function NewsletterPricingSlider() {
-  const [subs, setSubs] = useState(2500);
+  const [subs, setSubs] = useState(5000);
   const [loading, setLoading] = useState(false);
 
   const price = useMemo(() => monthlyPriceFor(subs), [subs]);
@@ -75,7 +75,7 @@ export default function NewsletterPricingSlider() {
   const trackBackground = `linear-gradient(to right, #00d4ff 0%, #8b5cf6 ${pct}%, var(--border) ${pct}%, var(--border) 100%)`;
 
   return (
-    <section className="py-[72px] px-6">
+    <section id="pricing-slider" className="py-[72px] px-6 scroll-mt-24">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-3">
           <span className="text-cyan font-mono text-sm uppercase tracking-widest">
@@ -87,7 +87,7 @@ export default function NewsletterPricingSlider() {
         </h2>
         <p
           className="text-center text-lg mb-10 max-w-2xl mx-auto"
-          style={{ color: "#d1d9e3" }}
+          style={{ color: "#e8ecf1" }}
         >
           Drag to select. We always aim to slightly overdeliver.
         </p>
@@ -103,10 +103,10 @@ export default function NewsletterPricingSlider() {
             <span
               className="font-mono font-extrabold"
               style={{
-                fontSize: "clamp(48px, 9vw, 80px)",
-                color: "#00d4ff",
+                fontSize: "clamp(56px, 10vw, 104px)",
+                color: "#ffffff",
                 letterSpacing: "-0.02em",
-                textShadow: "0 0 30px rgba(0, 212, 255, 0.4)",
+                textShadow: "0 0 40px rgba(0, 212, 255, 0.55)",
                 lineHeight: 1,
               }}
             >
@@ -115,8 +115,8 @@ export default function NewsletterPricingSlider() {
           </div>
           <div className="text-center mb-8">
             <span
-              className="text-[14px] md:text-[15px] font-medium uppercase tracking-widest"
-              style={{ color: "#d1d9e3" }}
+              className="text-[14px] md:text-[15px] font-semibold uppercase tracking-widest"
+              style={{ color: "#e8ecf1" }}
             >
               subscribers per month
             </span>
@@ -138,7 +138,7 @@ export default function NewsletterPricingSlider() {
           </div>
           <div
             className="flex justify-between text-[12px] md:text-[13px] font-mono mb-10"
-            style={{ color: "#d1d9e3" }}
+            style={{ color: "#e8ecf1" }}
           >
             <span>{formatNumber(MIN_SUBS)}</span>
             <span>{formatNumber(MAX_SUBS)}</span>
@@ -155,19 +155,19 @@ export default function NewsletterPricingSlider() {
               <div>
                 <div
                   className="font-extrabold text-white leading-none"
-                  style={{ fontSize: "clamp(32px, 6vw, 44px)" }}
+                  style={{ fontSize: "clamp(40px, 7vw, 56px)" }}
                 >
                   ${formatNumber(price)}
                   <span
                     className="text-[18px] md:text-[20px] font-semibold ml-1"
-                    style={{ color: "#d1d9e3" }}
+                    style={{ color: "#e8ecf1" }}
                   >
                     /mo
                   </span>
                 </div>
                 <div
                   className="mt-2 text-[15px] md:text-[16px]"
-                  style={{ color: "#d1d9e3" }}
+                  style={{ color: "#e8ecf1" }}
                 >
                   ${perSub.toFixed(3)} per subscriber
                 </div>
@@ -175,13 +175,13 @@ export default function NewsletterPricingSlider() {
               <div className="sm:text-right">
                 <div
                   className="text-[13px] md:text-[14px] uppercase tracking-widest font-mono"
-                  style={{ color: "#d1d9e3" }}
+                  style={{ color: "#e8ecf1" }}
                 >
                   Meta Ads cost
                 </div>
                 <div
                   className="text-[20px] md:text-[22px] font-bold"
-                  style={{ color: "#d1d9e3", textDecoration: "line-through", textDecorationColor: "rgba(239, 68, 68, 0.6)" }}
+                  style={{ color: "#e8ecf1", textDecoration: "line-through", textDecorationColor: "rgba(239, 68, 68, 0.6)" }}
                 >
                   ${formatNumber(metaCost)}
                 </div>
@@ -189,13 +189,13 @@ export default function NewsletterPricingSlider() {
             </div>
 
             <div
-              className="rounded-lg px-4 py-3 flex items-center gap-3"
+              className="rounded-lg px-4 py-3 flex items-center gap-3 overflow-x-auto"
               style={{
                 background: "rgba(34, 232, 123, 0.08)",
                 border: "1px solid rgba(34, 232, 123, 0.25)",
               }}
             >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none" className="flex-shrink-0">
                 <path
                   d="M5 10l3.5 3.5L15 7"
                   stroke="#22e87b"
@@ -204,12 +204,19 @@ export default function NewsletterPricingSlider() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <div className="text-[14px] md:text-[15px]" style={{ color: "#d1d9e3" }}>
-                You&apos;d pay{" "}
-                <span className="font-bold text-white">${formatNumber(metaCost)}</span> on Meta Ads
-                for the same subscribers.{" "}
-                <span className="font-bold" style={{ color: "#22e87b" }}>
+              <div
+                className="font-semibold"
+                style={{
+                  color: "#ffffff",
+                  fontSize: "clamp(15px, 2vw, 18px)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                <span style={{ color: "#22e87b", fontWeight: 800 }}>
                   You save ${formatNumber(savings)}/mo
+                </span>
+                <span style={{ color: "#e8ecf1", fontWeight: 500 }}>
+                  {" "}vs Meta Ads
                 </span>
               </div>
             </div>
@@ -224,7 +231,7 @@ export default function NewsletterPricingSlider() {
           </button>
           <p
             className="text-center text-[13px] mt-3"
-            style={{ color: "#d1d9e3" }}
+            style={{ color: "#e8ecf1" }}
           >
             Billed monthly. Cancel anytime. No contracts.
           </p>
