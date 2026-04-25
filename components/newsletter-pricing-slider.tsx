@@ -208,7 +208,7 @@ export default function NewsletterPricingSlider() {
                 className="font-semibold"
                 style={{
                   color: "#ffffff",
-                  fontSize: "clamp(15px, 2vw, 18px)",
+                  fontSize: "clamp(11px, 1.55vw, 16px)",
                   whiteSpace: "nowrap",
                 }}
               >
@@ -216,7 +216,7 @@ export default function NewsletterPricingSlider() {
                   You save ${formatNumber(savings)}/mo
                 </span>
                 <span style={{ color: "#e8ecf1", fontWeight: 500 }}>
-                  {" "}vs Meta Ads
+                  {" "}— Meta Ads charges ${META_CPA.toFixed(2)}/sub, you pay ${perSub.toFixed(2)}/sub
                 </span>
               </div>
             </div>
